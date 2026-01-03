@@ -62,6 +62,14 @@ final class AudioManager {
             frequency = 165
             duration = 0.3
             volume = 0.5
+        case .powerUp:
+            frequency = 660
+            duration = 0.2
+            volume = 0.45
+        case .waveComplete:
+            frequency = 880
+            duration = 0.25
+            volume = 0.5
         }
 
         playTone(frequency: frequency, duration: duration, volume: volume)

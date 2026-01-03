@@ -9,6 +9,7 @@ struct GameContainerView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var coordinator = OverlayCoordinator()
     @State private var scene: SKScene?
+    @State private var sceneDelegate: SceneDelegate?
 
     var body: some View {
         let theme = themeManager.currentTheme
@@ -77,7 +78,11 @@ struct GameContainerView: View {
     }
 
     private func setupScene(size: CGSize) {
-        let newScene = game.createScene(size: size, delegate: self)
+        // Create class-based delegate that bridges to coordinator
+        let delegate = SceneDelegate(coordinator: coordinator)
+        sceneDelegate = delegate
+
+        let newScene = game.createScene(size: size, delegate: delegate)
         self.scene = newScene
         coordinator.startGame(gameId: game.id, scene: newScene)
     }
@@ -86,13 +91,23 @@ struct GameContainerView: View {
         if let testRangeScene = scene as? TestRangeScene {
             testRangeScene.restartGame()
             coordinator.restart()
+        } else if let glyphRunnerScene = scene as? GlyphRunnerScene {
+            glyphRunnerScene.restartGame()
+            coordinator.restart()
         }
     }
 }
 
-// MARK: - GameSceneDelegate
+// MARK: - SceneDelegate Class
 
-extension GameContainerView: GameSceneDelegate {
+/// Class-based delegate that bridges SKScene callbacks to the coordinator
+final class SceneDelegate: GameSceneDelegate {
+    private let coordinator: OverlayCoordinator
+
+    init(coordinator: OverlayCoordinator) {
+        self.coordinator = coordinator
+    }
+
     func gameScene(_ scene: SKScene, didUpdateScore score: Int) {
         coordinator.updateScore(score)
     }

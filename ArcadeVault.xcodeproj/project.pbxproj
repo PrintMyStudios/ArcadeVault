@@ -7,53 +7,61 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F0000001 /* ArcadeVaultApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000001; };
-		F0000002 /* AppBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000002; };
-		F0000003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000003; };
-		F0000004 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000004; };
-		F0000005 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000005; };
-		F0000006 /* PersistenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000006; };
-		F0000007 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000007; };
-		F0000008 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000008; };
-		F0000009 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000009; };
-		F0000010 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000010; };
-		F0000011 /* NeonCRTTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000011; };
-		F0000012 /* VectorArcadeTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000012; };
-		F0000013 /* EightBitCandyTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000013; };
-		F0000014 /* ArcadeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000014; };
-		F0000015 /* GameSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000015; };
-		F0000016 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000016; };
-		F0000017 /* OverlayCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000017; };
-		F0000018 /* GameRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000018; };
-		F0000019 /* VaultHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000019; };
-		F0000020 /* GameTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000020; };
-		F0000021 /* ProceduralIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000021; };
-		F0000022 /* GameContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000022; };
-		F0000023 /* GameHUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000023; };
-		F0000024 /* PauseOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000024; };
-		F0000025 /* GameOverOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000025; };
-		F0000026 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000026; };
-		F0000027 /* ThemePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000027; };
-		F0000028 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000028; };
-		F0000029 /* ComingSoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000029; };
-		F0000030 /* CRTOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000030; };
-		F0000031 /* RetroButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000031; };
-		F0000032 /* MarqueeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000032; };
-		F0000033 /* TestRangeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000033; };
-		F0000034 /* TestRangeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000034; };
-		F0000035 /* TestRangePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000035; };
-		F0000036 /* TestRangeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000036; };
-		F0000037 /* GlyphRunnerGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000037; };
-		F0000038 /* GlyphRunnerScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000038; };
-		F0000039 /* StarlineSiegeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000039; };
-		F0000040 /* StarlineSiegeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000040; };
-		F0000041 /* RivetClimbGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000041; };
-		F0000042 /* RivetClimbScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000042; };
-		F0000043 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1000043; };
-		F0000044 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1000044; };
+		021360A08040F30192266511 /* GlyphRunnerMaze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6824BE95AA198002D7BC5D /* GlyphRunnerMaze.swift */; };
+		34015F93147FA02154B890E2 /* GlyphRunnerPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4BF8E9226F3677A81AD231 /* GlyphRunnerPlayer.swift */; };
+		7CDF4D806B6E1A420E45DF85 /* GlyphRunnerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B029A3F42A42D4D4792A468 /* GlyphRunnerConstants.swift */; };
+		9732EEAE632D0B1468BFCB5A /* GlyphRunnerEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF492EDE4EB88F5E0A52D0F3 /* GlyphRunnerEnemy.swift */; };
+		F0000001 /* ArcadeVaultApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000001 /* ArcadeVaultApp.swift */; };
+		F0000002 /* AppBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000002 /* AppBrand.swift */; };
+		F0000003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000003 /* ContentView.swift */; };
+		F0000004 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000004 /* Constants.swift */; };
+		F0000005 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000005 /* Extensions.swift */; };
+		F0000006 /* PersistenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000006 /* PersistenceStore.swift */; };
+		F0000007 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000007 /* AudioManager.swift */; };
+		F0000008 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000008 /* HapticsManager.swift */; };
+		F0000009 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000009 /* Theme.swift */; };
+		F0000010 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000010 /* ThemeManager.swift */; };
+		F0000011 /* NeonCRTTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000011 /* NeonCRTTheme.swift */; };
+		F0000012 /* VectorArcadeTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000012 /* VectorArcadeTheme.swift */; };
+		F0000013 /* EightBitCandyTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000013 /* EightBitCandyTheme.swift */; };
+		F0000014 /* ArcadeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000014 /* ArcadeGame.swift */; };
+		F0000015 /* GameSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000015 /* GameSceneDelegate.swift */; };
+		F0000016 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000016 /* GameState.swift */; };
+		F0000017 /* OverlayCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000017 /* OverlayCoordinator.swift */; };
+		F0000018 /* GameRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000018 /* GameRegistry.swift */; };
+		F0000019 /* VaultHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000019 /* VaultHomeView.swift */; };
+		F0000020 /* GameTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000020 /* GameTileView.swift */; };
+		F0000021 /* ProceduralIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000021 /* ProceduralIconView.swift */; };
+		F0000022 /* GameContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000022 /* GameContainerView.swift */; };
+		F0000023 /* GameHUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000023 /* GameHUDView.swift */; };
+		F0000024 /* PauseOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000024 /* PauseOverlayView.swift */; };
+		F0000025 /* GameOverOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000025 /* GameOverOverlayView.swift */; };
+		F0000026 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000026 /* SettingsView.swift */; };
+		F0000027 /* ThemePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000027 /* ThemePickerView.swift */; };
+		F0000028 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000028 /* AboutView.swift */; };
+		F0000029 /* ComingSoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000029 /* ComingSoonView.swift */; };
+		F0000030 /* CRTOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000030 /* CRTOverlayView.swift */; };
+		F0000031 /* RetroButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000031 /* RetroButtonStyle.swift */; };
+		F0000032 /* MarqueeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000032 /* MarqueeHeaderView.swift */; };
+		F0000033 /* TestRangeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000033 /* TestRangeGame.swift */; };
+		F0000034 /* TestRangeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000034 /* TestRangeScene.swift */; };
+		F0000035 /* TestRangePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000035 /* TestRangePlayer.swift */; };
+		F0000036 /* TestRangeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000036 /* TestRangeConstants.swift */; };
+		F0000037 /* GlyphRunnerGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000037 /* GlyphRunnerGame.swift */; };
+		F0000038 /* GlyphRunnerScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000038 /* GlyphRunnerScene.swift */; };
+		F0000039 /* StarlineSiegeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000039 /* StarlineSiegeGame.swift */; };
+		F0000040 /* StarlineSiegeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000040 /* StarlineSiegeScene.swift */; };
+		F0000041 /* RivetClimbGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000041 /* RivetClimbGame.swift */; };
+		F0000042 /* RivetClimbScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000042 /* RivetClimbScene.swift */; };
+		F0000043 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1000043 /* Assets.xcassets */; };
+		F0000044 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1000044 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B029A3F42A42D4D4792A468 /* GlyphRunnerConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GlyphRunnerConstants.swift; sourceTree = "<group>"; };
+		7F6824BE95AA198002D7BC5D /* GlyphRunnerMaze.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GlyphRunnerMaze.swift; sourceTree = "<group>"; };
+		CD4BF8E9226F3677A81AD231 /* GlyphRunnerPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GlyphRunnerPlayer.swift; sourceTree = "<group>"; };
+		DF492EDE4EB88F5E0A52D0F3 /* GlyphRunnerEnemy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GlyphRunnerEnemy.swift; sourceTree = "<group>"; };
 		F1000000 /* ArcadeVault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArcadeVault.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1000001 /* ArcadeVaultApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadeVaultApp.swift; sourceTree = "<group>"; };
 		F1000002 /* AppBrand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBrand.swift; sourceTree = "<group>"; };
@@ -333,6 +341,10 @@
 			children = (
 				F1000037 /* GlyphRunnerGame.swift */,
 				F1000038 /* GlyphRunnerScene.swift */,
+				7B029A3F42A42D4D4792A468 /* GlyphRunnerConstants.swift */,
+				7F6824BE95AA198002D7BC5D /* GlyphRunnerMaze.swift */,
+				CD4BF8E9226F3677A81AD231 /* GlyphRunnerPlayer.swift */,
+				DF492EDE4EB88F5E0A52D0F3 /* GlyphRunnerEnemy.swift */,
 			);
 			path = GlyphRunner;
 			sourceTree = "<group>";
@@ -360,7 +372,7 @@
 /* Begin PBXNativeTarget section */
 		F4000001 /* ArcadeVault */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F5000001;
+			buildConfigurationList = F5000001 /* Build configuration list for PBXNativeTarget "ArcadeVault" */;
 			buildPhases = (
 				F4000002 /* Sources */,
 				F2000001 /* Frameworks */,
@@ -390,7 +402,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F5000002;
+			buildConfigurationList = F5000002 /* Build configuration list for PBXProject "ArcadeVault" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -467,6 +479,10 @@
 				F0000040 /* StarlineSiegeScene.swift in Sources */,
 				F0000041 /* RivetClimbGame.swift in Sources */,
 				F0000042 /* RivetClimbScene.swift in Sources */,
+				7CDF4D806B6E1A420E45DF85 /* GlyphRunnerConstants.swift in Sources */,
+				021360A08040F30192266511 /* GlyphRunnerMaze.swift in Sources */,
+				34015F93147FA02154B890E2 /* GlyphRunnerPlayer.swift in Sources */,
+				9732EEAE632D0B1468BFCB5A /* GlyphRunnerEnemy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

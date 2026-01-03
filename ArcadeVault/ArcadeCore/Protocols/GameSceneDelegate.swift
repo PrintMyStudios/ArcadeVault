@@ -17,6 +17,8 @@ enum SoundType {
     case collect
     case hit
     case gameOver
+    case powerUp
+    case waveComplete
 }
 
 /// Communication protocol from SKScene back to SwiftUI container

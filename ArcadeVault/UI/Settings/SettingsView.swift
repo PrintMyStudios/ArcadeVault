@@ -22,7 +22,10 @@ struct SettingsView: View {
                         .font(theme.typography.captionFont)
                         .foregroundColor(palette.foregroundSecondary)
 
-                    Toggle(isOn: $themeManager.crtOverlayEnabled) {
+                    Toggle(isOn: Binding(
+                        get: { themeManager.crtOverlayEnabled },
+                        set: { themeManager.crtOverlayEnabled = $0 }
+                    )) {
                         HStack {
                             Image(systemName: "tv")
                                 .foregroundColor(palette.accent)

@@ -47,6 +47,6 @@ extension CGPoint {
 extension CGFloat {
     /// Clamp value between min and max
     func clamped(to range: ClosedRange<CGFloat>) -> CGFloat {
-        min(max(self, range.lowerBound), range.upperBound)
+        Swift.min(Swift.max(self, range.lowerBound), range.upperBound)
     }
 }
