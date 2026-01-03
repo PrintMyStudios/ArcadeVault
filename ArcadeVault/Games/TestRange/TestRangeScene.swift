@@ -1,7 +1,7 @@
 import SpriteKit
 
 /// Main gameplay scene for Test Range
-class TestRangeScene: SKScene, SKPhysicsContactDelegate {
+class TestRangeScene: SKScene, SKPhysicsContactDelegate, RestartableScene {
 
     weak var gameDelegate: GameSceneDelegate?
 

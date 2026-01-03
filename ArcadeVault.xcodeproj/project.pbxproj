@@ -58,6 +58,11 @@
 		F0000041 /* RivetClimbGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000041 /* RivetClimbGame.swift */; };
 		F0000042 /* RivetClimbScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000042 /* RivetClimbScene.swift */; };
 		F0000043 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1000043 /* Assets.xcassets */; };
+		C1000001 /* RestartableScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1000001 /* RestartableScene.swift */; };
+		C1000002 /* RivetClimbConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1000002 /* RivetClimbConstants.swift */; };
+		C1000003 /* RivetClimbLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1000003 /* RivetClimbLevel.swift */; };
+		C1000004 /* RivetClimbPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1000004 /* RivetClimbPlayer.swift */; };
+		C1000005 /* RivetClimbObstacle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1000005 /* RivetClimbObstacle.swift */; };
 		F0000044 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1000044 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +119,11 @@
 		F1000041 /* RivetClimbGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RivetClimbGame.swift; sourceTree = "<group>"; };
 		F1000042 /* RivetClimbScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RivetClimbScene.swift; sourceTree = "<group>"; };
 		F1000043 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D1000001 /* RestartableScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestartableScene.swift; sourceTree = "<group>"; };
+		D1000002 /* RivetClimbConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RivetClimbConstants.swift; sourceTree = "<group>"; };
+		D1000003 /* RivetClimbLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RivetClimbLevel.swift; sourceTree = "<group>"; };
+		D1000004 /* RivetClimbPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RivetClimbPlayer.swift; sourceTree = "<group>"; };
+		D1000005 /* RivetClimbObstacle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RivetClimbObstacle.swift; sourceTree = "<group>"; };
 		F1000044 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -293,6 +303,7 @@
 			children = (
 				F1000014 /* ArcadeGame.swift */,
 				F1000015 /* GameSceneDelegate.swift */,
+				D1000001 /* RestartableScene.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -375,6 +386,10 @@
 			children = (
 				F1000041 /* RivetClimbGame.swift */,
 				F1000042 /* RivetClimbScene.swift */,
+				D1000002 /* RivetClimbConstants.swift */,
+				D1000003 /* RivetClimbLevel.swift */,
+				D1000004 /* RivetClimbPlayer.swift */,
+				D1000005 /* RivetClimbObstacle.swift */,
 			);
 			path = RivetClimb;
 			sourceTree = "<group>";
@@ -499,6 +514,11 @@
 				A1000002 /* StarlineSiegePlayer.swift in Sources */,
 				A1000003 /* StarlineSiegeEnemy.swift in Sources */,
 				A1000004 /* StarlineSiegeBullet.swift in Sources */,
+				C1000001 /* RestartableScene.swift in Sources */,
+				C1000002 /* RivetClimbConstants.swift in Sources */,
+				C1000003 /* RivetClimbLevel.swift in Sources */,
+				C1000004 /* RivetClimbPlayer.swift in Sources */,
+				C1000005 /* RivetClimbObstacle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

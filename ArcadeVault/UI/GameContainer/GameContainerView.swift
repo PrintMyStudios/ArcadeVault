@@ -88,14 +88,9 @@ struct GameContainerView: View {
     }
 
     private func restartGame() {
-        if let testRangeScene = scene as? TestRangeScene {
-            testRangeScene.restartGame()
-            coordinator.restart()
-        } else if let glyphRunnerScene = scene as? GlyphRunnerScene {
-            glyphRunnerScene.restartGame()
-            coordinator.restart()
-        } else if let starlineSiegeScene = scene as? StarlineSiegeScene {
-            starlineSiegeScene.restartGame()
+        // Use RestartableScene protocol for cleaner restart handling
+        if let restartable = scene as? (SKScene & RestartableScene) {
+            restartable.restartGame()
             coordinator.restart()
         }
     }

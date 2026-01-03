@@ -1,6 +1,6 @@
 import SpriteKit
 
-class GlyphRunnerScene: SKScene, SKPhysicsContactDelegate {
+class GlyphRunnerScene: SKScene, SKPhysicsContactDelegate, RestartableScene {
 
     // MARK: - Delegate
 

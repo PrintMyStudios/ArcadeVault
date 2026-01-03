@@ -9,7 +9,7 @@ private enum GamePhase {
 }
 
 /// Main gameplay scene for Starline Siege
-class StarlineSiegeScene: SKScene, SKPhysicsContactDelegate {
+class StarlineSiegeScene: SKScene, SKPhysicsContactDelegate, RestartableScene {
 
     // MARK: - Delegate
 
