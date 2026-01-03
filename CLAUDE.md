@@ -4,9 +4,57 @@ See @README.md for project overview and @plan.md for requirements.
 
 ## Project status
 - **Phase 0**: COMPLETE — Cabinet foundation, Test Range playable, 3 stub games
-- **Phase 1**: TODO — Implement Glyph Runner (maze chase)
+- **Phase 1**: NEXT — Implement Glyph Runner (maze chase)
 - **Phase 2**: TODO — Implement Starline Siege (fixed shooter)
 - **Phase 3**: TODO — Implement Rivet Climb (platformer)
+
+---
+
+## NEXT TASK: Phase 1 — Glyph Runner
+
+### What to build
+Replace the stub at `Games/GlyphRunner/` with a fully playable **maze chase** game (inspired by Pac-Man mechanics but 100% original).
+
+### Game concept
+- Player navigates a maze collecting glyphs/symbols
+- Enemies patrol the maze and chase the player
+- Clear all glyphs to complete a level
+- Multiple levels with increasing difficulty
+- Power-ups that let player defeat enemies temporarily
+
+### Implementation steps
+1. **Read existing stub** at `Games/GlyphRunner/GlyphRunnerGame.swift` and `GlyphRunnerScene.swift`
+2. **Create new files**:
+   - `GlyphRunnerConstants.swift` — tuning values
+   - `GlyphRunnerPlayer.swift` — player node
+   - `GlyphRunnerEnemy.swift` — enemy AI
+   - `GlyphRunnerMaze.swift` — maze generation/structure
+3. **Update `GlyphRunnerGame.swift`** — change availability to `.available`
+4. **Implement `GlyphRunnerScene.swift`**:
+   - Maze rendering (procedural, no assets)
+   - Player movement (swipe or tap direction)
+   - Glyph collection
+   - Enemy spawning and AI (patrol + chase)
+   - Collision detection
+   - Level completion and progression
+   - Score tracking via `gameDelegate`
+5. **Update `GameContainerView.restartGame()`** to handle GlyphRunner restart
+6. **Test**: Home tile works, game plays, pause/resume/game-over flow, best score persists
+
+### Design constraints
+- Procedural visuals only (shapes, gradients — no external images)
+- Use theme colors from `ThemeManager.shared.currentTheme.palette`
+- Keep game logic in `Games/GlyphRunner/` folder
+- Follow patterns from TestRange (delegate calls, physics categories)
+
+### Reference: TestRange pattern
+Look at `Games/TestRange/` for the working pattern:
+- `TestRangeConstants.swift` — physics categories, tuning values
+- `TestRangePlayer.swift` — SKShapeNode subclass with physics
+- `TestRangeScene.swift` — full gameplay loop, delegate communication
+- `TestRangeGame.swift` — ArcadeGame protocol conformance
+
+---
 
 ## Operating principles (follow strictly)
 - Build **original** retro-inspired games: never copy classic names, art, sounds, UI layouts, or level designs.
@@ -93,6 +141,28 @@ See `ADDING-A-GAME.md` for step-by-step instructions. Quick summary:
   - `ADDING-A-GAME.md` (how to add modules)
 - Update README.md when project structure changes.
 
-## Hard no’s
+## Hard no's
 - No classic trademarked titles in UI/metadata (Pac-Man, Space Invaders, Donkey Kong, Pong, Breakout).
-- No copied assets, no ripped audio, no “remake” branding.
+- No copied assets, no ripped audio, no "remake" branding.
+
+---
+
+## Session startup checklist
+When starting a new conversation:
+1. Read this file (CLAUDE.md) for context and next task
+2. Check `git status` for any uncommitted changes
+3. Check `git log --oneline -3` for recent history
+4. Read `plan.md` if more detail needed on requirements
+5. If user asks to continue, proceed with the NEXT TASK above
+
+## Phase 0 summary (for context)
+Built complete iOS app foundation with:
+- **42 Swift files** in modular architecture
+- **SwiftUI shell**: NavigationStack, VaultHomeView, SettingsView, AboutView
+- **SpriteKit container**: GameContainerView hosts SKScene with SwiftUI overlays
+- **Theme system**: 3 themes (Neon CRT, Vector Arcade, 8-Bit Candy) with full token sets
+- **Services**: AudioManager (procedural SFX), HapticsManager, PersistenceStore
+- **Test Range game**: Playable collect/dodge game validating full flow
+- **3 stub games**: GlyphRunner, StarlineSiege, RivetClimb (show "Coming Soon")
+- **Overlays**: HUD, Pause menu, Game Over screen
+- **Persistence**: Theme, CRT toggle, sound/haptics, per-game best scores
