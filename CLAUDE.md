@@ -72,13 +72,20 @@ See `ADDING-A-GAME.md` for step-by-step instructions. Quick summary:
 3. Register in `GameRegistry.registerGames()`
 4. Update `GameContainerView.restartGame()` for restart support
 
+## Git workflow
+- **Commit after significant changes**: After completing a feature, fixing bugs, or making meaningful progress, create a commit with a clear message.
+- **Commit message format**: Brief summary line, then bullet points of what changed.
+- **Remind user to push**: When finishing a task or session, remind the user to push to GitHub if there are unpushed commits.
+- Check `git status` before ending to ensure nothing is left uncommitted.
+
 ## Output / collaboration rules
-- When asked to “write out the full code”, output **full file contents**, not snippets.
+- When asked to "write out the full code", output **full file contents**, not snippets.
 - If editing existing files, preserve formatting and keep diffs minimal.
 - After implementing a feature:
   - ensure the project compiles
   - sanity-check navigation and pause/resume flows
   - update docs when behavior or structure changes
+  - **commit the changes** with a descriptive message
 
 ## Documentation expectations
 - Maintain:
