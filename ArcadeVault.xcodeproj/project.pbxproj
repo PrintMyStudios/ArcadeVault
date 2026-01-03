@@ -11,6 +11,10 @@
 		34015F93147FA02154B890E2 /* GlyphRunnerPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4BF8E9226F3677A81AD231 /* GlyphRunnerPlayer.swift */; };
 		7CDF4D806B6E1A420E45DF85 /* GlyphRunnerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B029A3F42A42D4D4792A468 /* GlyphRunnerConstants.swift */; };
 		9732EEAE632D0B1468BFCB5A /* GlyphRunnerEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF492EDE4EB88F5E0A52D0F3 /* GlyphRunnerEnemy.swift */; };
+		A1000001 /* StarlineSiegeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000001 /* StarlineSiegeConstants.swift */; };
+		A1000002 /* StarlineSiegePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000002 /* StarlineSiegePlayer.swift */; };
+		A1000003 /* StarlineSiegeEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000003 /* StarlineSiegeEnemy.swift */; };
+		A1000004 /* StarlineSiegeBullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000004 /* StarlineSiegeBullet.swift */; };
 		F0000001 /* ArcadeVaultApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000001 /* ArcadeVaultApp.swift */; };
 		F0000002 /* AppBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000002 /* AppBrand.swift */; };
 		F0000003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000003 /* ContentView.swift */; };
@@ -62,6 +66,10 @@
 		7F6824BE95AA198002D7BC5D /* GlyphRunnerMaze.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GlyphRunnerMaze.swift; sourceTree = "<group>"; };
 		CD4BF8E9226F3677A81AD231 /* GlyphRunnerPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GlyphRunnerPlayer.swift; sourceTree = "<group>"; };
 		DF492EDE4EB88F5E0A52D0F3 /* GlyphRunnerEnemy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GlyphRunnerEnemy.swift; sourceTree = "<group>"; };
+		B1000001 /* StarlineSiegeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlineSiegeConstants.swift; sourceTree = "<group>"; };
+		B1000002 /* StarlineSiegePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlineSiegePlayer.swift; sourceTree = "<group>"; };
+		B1000003 /* StarlineSiegeEnemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlineSiegeEnemy.swift; sourceTree = "<group>"; };
+		B1000004 /* StarlineSiegeBullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlineSiegeBullet.swift; sourceTree = "<group>"; };
 		F1000000 /* ArcadeVault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArcadeVault.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1000001 /* ArcadeVaultApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadeVaultApp.swift; sourceTree = "<group>"; };
 		F1000002 /* AppBrand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBrand.swift; sourceTree = "<group>"; };
@@ -354,6 +362,10 @@
 			children = (
 				F1000039 /* StarlineSiegeGame.swift */,
 				F1000040 /* StarlineSiegeScene.swift */,
+				B1000001 /* StarlineSiegeConstants.swift */,
+				B1000002 /* StarlineSiegePlayer.swift */,
+				B1000003 /* StarlineSiegeEnemy.swift */,
+				B1000004 /* StarlineSiegeBullet.swift */,
 			);
 			path = StarlineSiege;
 			sourceTree = "<group>";
@@ -483,6 +495,10 @@
 				021360A08040F30192266511 /* GlyphRunnerMaze.swift in Sources */,
 				34015F93147FA02154B890E2 /* GlyphRunnerPlayer.swift in Sources */,
 				9732EEAE632D0B1468BFCB5A /* GlyphRunnerEnemy.swift in Sources */,
+				A1000001 /* StarlineSiegeConstants.swift in Sources */,
+				A1000002 /* StarlineSiegePlayer.swift in Sources */,
+				A1000003 /* StarlineSiegeEnemy.swift in Sources */,
+				A1000004 /* StarlineSiegeBullet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,6 +632,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ArcadeVault/Preview Content\"";
+				DEVELOPMENT_TEAM = 84ZFH2KUG6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Arcade Vault";
@@ -648,6 +665,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ArcadeVault/Preview Content\"";
+				DEVELOPMENT_TEAM = 84ZFH2KUG6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Arcade Vault";

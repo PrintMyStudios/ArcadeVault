@@ -94,6 +94,9 @@ struct GameContainerView: View {
         } else if let glyphRunnerScene = scene as? GlyphRunnerScene {
             glyphRunnerScene.restartGame()
             coordinator.restart()
+        } else if let starlineSiegeScene = scene as? StarlineSiegeScene {
+            starlineSiegeScene.restartGame()
+            coordinator.restart()
         }
     }
 }

@@ -5,54 +5,53 @@ See @README.md for project overview and @plan.md for requirements.
 ## Project status
 - **Phase 0**: COMPLETE — Cabinet foundation, Test Range playable, 3 stub games
 - **Phase 1**: COMPLETE — Glyph Runner fully playable (maze chase)
-- **Phase 2**: NEXT — Implement Starline Siege (fixed shooter)
-- **Phase 3**: TODO — Implement Rivet Climb (platformer)
+- **Phase 2**: COMPLETE — Starline Siege fully playable (fixed shooter)
+- **Phase 3**: NEXT — Implement Rivet Climb (platformer)
 
 ---
 
-## NEXT TASK: Phase 2 — Starline Siege
+## NEXT TASK: Phase 3 — Rivet Climb
 
 ### What to build
-Replace the stub at `Games/StarlineSiege/` with a fully playable **fixed shooter** game (inspired by Space Invaders mechanics but 100% original).
+Replace the stub at `Games/RivetClimb/` with a fully playable **platform climber** game (inspired by Donkey Kong mechanics but 100% original).
 
 ### Game concept
-- Player controls a ship at bottom of screen
-- Enemies descend in formations from top
-- Shoot enemies before they reach the bottom
-- Multiple waves with increasing difficulty
-- Power-ups (shields, rapid fire, multi-shot)
+- Player climbs platforms using ladders
+- Obstacles roll/fall from top
+- Collect items while avoiding hazards
+- Reach the top to complete levels
+- Multiple levels with increasing difficulty
 
 ### Implementation steps
-1. **Read existing stub** at `Games/StarlineSiege/StarlineSiegeGame.swift` and `StarlineSiegeScene.swift`
+1. **Read existing stub** at `Games/RivetClimb/RivetClimbGame.swift` and `RivetClimbScene.swift`
 2. **Create new files**:
-   - `StarlineSiegeConstants.swift` — tuning values, physics categories
-   - `StarlineSiegePlayer.swift` — player ship node
-   - `StarlineSiegeEnemy.swift` — enemy types with behaviors
-   - `StarlineSiegeBullet.swift` — projectile handling
-3. **Update `StarlineSiegeGame.swift`** — change availability to `.available`
-4. **Implement `StarlineSiegeScene.swift`**:
-   - Player ship at bottom (drag to move horizontally)
-   - Tap to shoot projectiles
-   - Enemy wave spawning (formations)
-   - Enemy descent and shooting
-   - Collision detection (bullets, enemies, player)
-   - Wave completion and progression
+   - `RivetClimbConstants.swift` — tuning values, physics categories
+   - `RivetClimbPlayer.swift` — player character with platforming physics
+   - `RivetClimbLevel.swift` — level layout, platforms, ladders
+   - `RivetClimbObstacle.swift` — rolling/falling hazards
+3. **Update `RivetClimbGame.swift`** — change availability to `.available`
+4. **Implement `RivetClimbScene.swift`**:
+   - Platform layout with ladders
+   - Player movement (walk left/right, climb ladders)
+   - Obstacle spawning and physics
+   - Collision detection
+   - Level completion and progression
    - Score tracking via `gameDelegate`
-5. **Update `GameContainerView.restartGame()`** to handle StarlineSiege restart
+5. **Update `GameContainerView.restartGame()`** to handle RivetClimb restart
 6. **Test**: Home tile works, game plays, pause/resume/game-over flow, best score persists
 
 ### Design constraints
 - Procedural visuals only (shapes, gradients — no external images)
 - Use theme colors from `ThemeManager.shared.currentTheme.palette`
-- Keep game logic in `Games/StarlineSiege/` folder
-- Follow patterns from GlyphRunner and TestRange
+- Keep game logic in `Games/RivetClimb/` folder
+- Follow patterns from GlyphRunner and StarlineSiege
 
-### Reference: GlyphRunner pattern
-Look at `Games/GlyphRunner/` for the latest working pattern:
-- `GlyphRunnerConstants.swift` — physics categories, tuning values
-- `GlyphRunnerPlayer.swift` — SKShapeNode subclass with physics
-- `GlyphRunnerEnemy.swift` — enemy AI with state machine
-- `GlyphRunnerScene.swift` — full gameplay loop, delegate communication
+### Reference: StarlineSiege pattern
+Look at `Games/StarlineSiege/` for the latest working pattern:
+- `StarlineSiegeConstants.swift` — physics categories, tuning values
+- `StarlineSiegePlayer.swift` — SKShapeNode subclass with physics
+- `StarlineSiegeEnemy.swift` — enemy types with behaviors
+- `StarlineSiegeScene.swift` — full gameplay loop, delegate communication
 
 ---
 
@@ -123,7 +122,7 @@ When you add assets to `Assets.xcassets`, tell Claude to update the correspondin
 |------|--------|-------|
 | Test Range | PLAYABLE | `Games/TestRange/*` |
 | Glyph Runner | PLAYABLE | `Games/GlyphRunner/*` (6 files) |
-| Starline Siege | STUB | `Games/StarlineSiege/*` |
+| Starline Siege | PLAYABLE | `Games/StarlineSiege/*` (6 files) |
 | Rivet Climb | STUB | `Games/RivetClimb/*` |
 
 ## Adding a new game
@@ -192,3 +191,17 @@ Implemented full maze chase game with:
 - **Lives system**: 3 lives with respawn
 - **Level progression**: Faster enemies each level, level completion bonus
 - **Bug fixes**: Fixed struct/class delegate conformance, @Observable bindings
+
+## Phase 2 summary (Starline Siege)
+Implemented full fixed shooter game with:
+- **6 files** in `Games/StarlineSiege/` (4 new, 2 rewritten)
+- **Player ship**: Chevron shape, drag to move horizontally, tap to shoot
+- **Enemy formation**: 7×4 grid with 3 types (Basic, Fast, Heavy)
+- **Formation movement**: Side-to-side with descent on edge hit, speed increases
+- **Enemy shooting**: Bottom-most in each column can fire (by screen y-position)
+- **Bullets**: Player bullets (fast up), enemy bullets (slower down), precision collision
+- **Power-ups**: Shield (8s), Rapid Fire (6s), Multi-Shot (6s) — 10% drop, max 1 on screen
+- **Wave system**: Clear all enemies for bonus, next wave harder
+- **Lives system**: 3 lives with 2-second invincibility on respawn
+- **Game over**: Lives depleted OR enemies reach player level
+- **Touch handling**: Tap detection (vs drag) for clean controls
