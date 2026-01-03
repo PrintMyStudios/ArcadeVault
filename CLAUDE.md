@@ -4,55 +4,68 @@ See @README.md for project overview and @plan.md for requirements.
 
 ## Project status
 - **Phase 0**: COMPLETE — Cabinet foundation, Test Range playable, 3 stub games
-- **Phase 1**: NEXT — Implement Glyph Runner (maze chase)
-- **Phase 2**: TODO — Implement Starline Siege (fixed shooter)
+- **Phase 1**: COMPLETE — Glyph Runner fully playable (maze chase)
+- **Phase 2**: NEXT — Implement Starline Siege (fixed shooter)
 - **Phase 3**: TODO — Implement Rivet Climb (platformer)
 
 ---
 
-## NEXT TASK: Phase 1 — Glyph Runner
+## NEXT TASK: Phase 2 — Starline Siege
 
 ### What to build
-Replace the stub at `Games/GlyphRunner/` with a fully playable **maze chase** game (inspired by Pac-Man mechanics but 100% original).
+Replace the stub at `Games/StarlineSiege/` with a fully playable **fixed shooter** game (inspired by Space Invaders mechanics but 100% original).
 
 ### Game concept
-- Player navigates a maze collecting glyphs/symbols
-- Enemies patrol the maze and chase the player
-- Clear all glyphs to complete a level
-- Multiple levels with increasing difficulty
-- Power-ups that let player defeat enemies temporarily
+- Player controls a ship at bottom of screen
+- Enemies descend in formations from top
+- Shoot enemies before they reach the bottom
+- Multiple waves with increasing difficulty
+- Power-ups (shields, rapid fire, multi-shot)
 
 ### Implementation steps
-1. **Read existing stub** at `Games/GlyphRunner/GlyphRunnerGame.swift` and `GlyphRunnerScene.swift`
+1. **Read existing stub** at `Games/StarlineSiege/StarlineSiegeGame.swift` and `StarlineSiegeScene.swift`
 2. **Create new files**:
-   - `GlyphRunnerConstants.swift` — tuning values
-   - `GlyphRunnerPlayer.swift` — player node
-   - `GlyphRunnerEnemy.swift` — enemy AI
-   - `GlyphRunnerMaze.swift` — maze generation/structure
-3. **Update `GlyphRunnerGame.swift`** — change availability to `.available`
-4. **Implement `GlyphRunnerScene.swift`**:
-   - Maze rendering (procedural, no assets)
-   - Player movement (swipe or tap direction)
-   - Glyph collection
-   - Enemy spawning and AI (patrol + chase)
-   - Collision detection
-   - Level completion and progression
+   - `StarlineSiegeConstants.swift` — tuning values, physics categories
+   - `StarlineSiegePlayer.swift` — player ship node
+   - `StarlineSiegeEnemy.swift` — enemy types with behaviors
+   - `StarlineSiegeBullet.swift` — projectile handling
+3. **Update `StarlineSiegeGame.swift`** — change availability to `.available`
+4. **Implement `StarlineSiegeScene.swift`**:
+   - Player ship at bottom (drag to move horizontally)
+   - Tap to shoot projectiles
+   - Enemy wave spawning (formations)
+   - Enemy descent and shooting
+   - Collision detection (bullets, enemies, player)
+   - Wave completion and progression
    - Score tracking via `gameDelegate`
-5. **Update `GameContainerView.restartGame()`** to handle GlyphRunner restart
+5. **Update `GameContainerView.restartGame()`** to handle StarlineSiege restart
 6. **Test**: Home tile works, game plays, pause/resume/game-over flow, best score persists
 
 ### Design constraints
 - Procedural visuals only (shapes, gradients — no external images)
 - Use theme colors from `ThemeManager.shared.currentTheme.palette`
-- Keep game logic in `Games/GlyphRunner/` folder
-- Follow patterns from TestRange (delegate calls, physics categories)
+- Keep game logic in `Games/StarlineSiege/` folder
+- Follow patterns from GlyphRunner and TestRange
 
-### Reference: TestRange pattern
-Look at `Games/TestRange/` for the working pattern:
-- `TestRangeConstants.swift` — physics categories, tuning values
-- `TestRangePlayer.swift` — SKShapeNode subclass with physics
-- `TestRangeScene.swift` — full gameplay loop, delegate communication
-- `TestRangeGame.swift` — ArcadeGame protocol conformance
+### Reference: GlyphRunner pattern
+Look at `Games/GlyphRunner/` for the latest working pattern:
+- `GlyphRunnerConstants.swift` — physics categories, tuning values
+- `GlyphRunnerPlayer.swift` — SKShapeNode subclass with physics
+- `GlyphRunnerEnemy.swift` — enemy AI with state machine
+- `GlyphRunnerScene.swift` — full gameplay loop, delegate communication
+
+---
+
+## Asset Design System (Optional Enhancement)
+
+The plan file at `~/.claude/plans/async-greeting-coral.md` contains a complete asset design system for creating custom sprites. Games work with procedural placeholders, but custom assets can be added following these specs:
+
+- **Player/Enemy sprites**: 64×64 points (@3x = 192×192 pixels)
+- **Collectibles**: 32×32 points
+- **Format**: PNG with transparency
+- **Style**: Pixel art at 16×16 or 32×32 scaled up
+
+When you add assets to `Assets.xcassets`, tell Claude to update the corresponding node class from `SKShapeNode` to `SKSpriteNode`.
 
 ---
 
@@ -109,7 +122,7 @@ Look at `Games/TestRange/` for the working pattern:
 | Game | Status | Files |
 |------|--------|-------|
 | Test Range | PLAYABLE | `Games/TestRange/*` |
-| Glyph Runner | STUB | `Games/GlyphRunner/*` |
+| Glyph Runner | PLAYABLE | `Games/GlyphRunner/*` (6 files) |
 | Starline Siege | STUB | `Games/StarlineSiege/*` |
 | Rivet Climb | STUB | `Games/RivetClimb/*` |
 
@@ -166,3 +179,16 @@ Built complete iOS app foundation with:
 - **3 stub games**: GlyphRunner, StarlineSiege, RivetClimb (show "Coming Soon")
 - **Overlays**: HUD, Pause menu, Game Over screen
 - **Persistence**: Theme, CRT toggle, sound/haptics, per-game best scores
+
+## Phase 1 summary (Glyph Runner)
+Implemented full maze chase game with:
+- **6 new/modified files** in `Games/GlyphRunner/`
+- **Grid-based maze**: 15×21 pre-designed symmetric layout
+- **Player**: Hexagon shape, swipe controls, grid movement with input buffering
+- **4 Enemies**: Distinct AI personalities (chaser, ambusher, patrol, random)
+- **Enemy AI**: State machine (inHome, exiting, scatter, chase, frightened, eaten)
+- **Collectibles**: Glyphs (10 pts) + Power glyphs (50 pts) with physics contacts
+- **Power-up system**: 8-second vulnerable state, consecutive eat bonuses (100→200→400→800)
+- **Lives system**: 3 lives with respawn
+- **Level progression**: Faster enemies each level, level completion bonus
+- **Bug fixes**: Fixed struct/class delegate conformance, @Observable bindings
