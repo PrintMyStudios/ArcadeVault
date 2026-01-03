@@ -67,15 +67,14 @@ We will create fully original game titles, art, sound, UI, levels, and branding.
 - `OverlayCoordinator` (pause, game over, HUD)
 
 ## 4) Game Slots (Roadmap)
-We will start by building ONE real game. The rest are stubs until later.
 
 Game slots (titles are ours; not classic names):
-1) **Glyph Runner** — Maze Chase style (stub in Phase 0)
-2) **Starline Siege** — Fixed Shooter style (stub in Phase 0)
-3) **Rivet Climb** — Platform Climber style (stub in Phase 0)
+1) **Glyph Runner** — Maze Chase style ✓ PLAYABLE
+2) **Starline Siege** — Fixed Shooter style ✓ PLAYABLE
+3) **Rivet Climb** — Platform Climber style (stub, NEXT)
 
-Phase 0 includes a playable placeholder game to validate the system:
-- **Test Range** — simple, tiny gameplay (collect/dodge) to prove end-to-end flow.
+Additional games:
+- **Test Range** — simple gameplay (collect/dodge) to validate the system ✓ PLAYABLE
 
 ## 5) Theme System (Retro identity without committing yet)
 
@@ -125,19 +124,37 @@ Delivered:
   - `THEME-PITCH.md`
   - `ADDING-A-GAME.md`
 
-### Phase 1 — Build Game 1 fully (NEXT)
-Implement **Glyph Runner** (maze chase style) as the first real game.
-- Replace stub with full gameplay
-- Maze generation, player movement, collectibles, enemies
-- Scoring system, multiple levels/waves
+### Phase 1 — Build Game 1 fully ✓ COMPLETE
+Implemented **Glyph Runner** (maze chase style) as the first real game.
 
-### Phase 2 — Build Game 2 fully (later)
-Implement **Starline Siege** (fixed shooter style).
-- Player ship, shooting mechanics
-- Enemy waves, formations
-- Power-ups, boss battles
+**Delivered:**
+- 6 files in `Games/GlyphRunner/`
+- 15×21 grid-based maze with symmetric layout
+- Player with swipe controls and input buffering
+- 4 enemy types with distinct AI personalities (chaser, ambusher, patrol, random)
+- Enemy state machine (inHome, exiting, scatter, chase, frightened, eaten)
+- Collectibles: Glyphs (10 pts) + Power glyphs (50 pts)
+- Power-up system with 8-second vulnerable state
+- Consecutive eat bonuses (100→200→400→800)
+- Lives system with respawn
+- Level progression with faster enemies
 
-### Phase 3 — Build Game 3 fully (later)
+### Phase 2 — Build Game 2 fully ✓ COMPLETE
+Implemented **Starline Siege** (fixed shooter style).
+
+**Delivered:**
+- 6 files in `Games/StarlineSiege/`
+- Player ship with drag-to-move, tap-to-shoot controls
+- 7×4 enemy formation with 3 types (Basic, Fast, Heavy)
+- Formation movement: side-to-side with descent on edge hit
+- Enemy shooting from bottom-most in each column
+- Power-ups: Shield (8s), Rapid Fire (6s), Multi-Shot (6s)
+- 10% power-up drop chance, max 1 on screen
+- Wave progression with increasing difficulty
+- Lives system with 2-second invincibility on respawn
+- Precision bullet collision detection
+
+### Phase 3 — Build Game 3 fully (NEXT)
 Implement **Rivet Climb** (platform climber style).
 - Platforming physics, ladders
 - Obstacles, hazards
