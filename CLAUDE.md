@@ -6,52 +6,24 @@ See @README.md for project overview and @plan.md for requirements.
 - **Phase 0**: COMPLETE — Cabinet foundation, Test Range playable, 3 stub games
 - **Phase 1**: COMPLETE — Glyph Runner fully playable (maze chase)
 - **Phase 2**: COMPLETE — Starline Siege fully playable (fixed shooter)
-- **Phase 3**: NEXT — Implement Rivet Climb (platformer)
+- **Phase 3**: COMPLETE — Rivet Climb fully playable (platform climber)
 
 ---
 
-## NEXT TASK: Phase 3 — Rivet Climb
+## ALL CORE GAMES COMPLETE
 
-### What to build
-Replace the stub at `Games/RivetClimb/` with a fully playable **platform climber** game (inspired by Donkey Kong mechanics but 100% original).
+All 3 planned games are now fully playable:
+- **Glyph Runner** — Maze chase style
+- **Starline Siege** — Fixed shooter style
+- **Rivet Climb** — Platform climber style
 
-### Game concept
-- Player climbs platforms using ladders
-- Obstacles roll/fall from top
-- Collect items while avoiding hazards
-- Reach the top to complete levels
-- Multiple levels with increasing difficulty
-
-### Implementation steps
-1. **Read existing stub** at `Games/RivetClimb/RivetClimbGame.swift` and `RivetClimbScene.swift`
-2. **Create new files**:
-   - `RivetClimbConstants.swift` — tuning values, physics categories
-   - `RivetClimbPlayer.swift` — player character with platforming physics
-   - `RivetClimbLevel.swift` — level layout, platforms, ladders
-   - `RivetClimbObstacle.swift` — rolling/falling hazards
-3. **Update `RivetClimbGame.swift`** — change availability to `.available`
-4. **Implement `RivetClimbScene.swift`**:
-   - Platform layout with ladders
-   - Player movement (walk left/right, climb ladders)
-   - Obstacle spawning and physics
-   - Collision detection
-   - Level completion and progression
-   - Score tracking via `gameDelegate`
-5. **Update `GameContainerView.restartGame()`** to handle RivetClimb restart
-6. **Test**: Home tile works, game plays, pause/resume/game-over flow, best score persists
-
-### Design constraints
-- Procedural visuals only (shapes, gradients — no external images)
-- Use theme colors from `ThemeManager.shared.currentTheme.palette`
-- Keep game logic in `Games/RivetClimb/` folder
-- Follow patterns from GlyphRunner and StarlineSiege
-
-### Reference: StarlineSiege pattern
-Look at `Games/StarlineSiege/` for the latest working pattern:
-- `StarlineSiegeConstants.swift` — physics categories, tuning values
-- `StarlineSiegePlayer.swift` — SKShapeNode subclass with physics
-- `StarlineSiegeEnemy.swift` — enemy types with behaviors
-- `StarlineSiegeScene.swift` — full gameplay loop, delegate communication
+### Potential future work
+- Polish and balance existing games
+- Add more levels/variations
+- Custom pixel art assets (see Asset Design System below)
+- Additional game modes
+- Leaderboards / achievements
+- Sound design improvements
 
 ---
 
@@ -123,7 +95,7 @@ When you add assets to `Assets.xcassets`, tell Claude to update the correspondin
 | Test Range | PLAYABLE | `Games/TestRange/*` |
 | Glyph Runner | PLAYABLE | `Games/GlyphRunner/*` (6 files) |
 | Starline Siege | PLAYABLE | `Games/StarlineSiege/*` (6 files) |
-| Rivet Climb | STUB | `Games/RivetClimb/*` |
+| Rivet Climb | PLAYABLE | `Games/RivetClimb/*` (6 files) |
 
 ## Adding a new game
 See `ADDING-A-GAME.md` for step-by-step instructions. Quick summary:
@@ -205,3 +177,18 @@ Implemented full fixed shooter game with:
 - **Lives system**: 3 lives with 2-second invincibility on respawn
 - **Game over**: Lives depleted OR enemies reach player level
 - **Touch handling**: Tap detection (vs drag) for clean controls
+
+## Phase 3 summary (Rivet Climb)
+Implemented full platform climber game with:
+- **6 files** in `Games/RivetClimb/` (4 new, 2 rewritten)
+- **Pure grid movement**: All entities step cell-to-cell, deterministic behavior
+- **Player states**: Grounded (walk left/right), climbing (up/down on ladders), falling
+- **Controls**: Tap zones for walking, swipes for climbing, hold-to-repeat for speed
+- **Input buffer**: Queue 1 action during movement for responsive feel
+- **Obstacles**: Rolling bolts (horizontal) and falling crates (vertical), grid-driven
+- **Difficulty scaling**: Spawn rate, obstacle mix, drop-through % increase per level
+- **Collectibles**: Rivets with streak bonus (+50 per consecutive without damage)
+- **Danger bonus**: +25 points when obstacle passes within 1 cell
+- **3 level layouts**: ASCII-defined, cycling with variations
+- **Lives system**: 3 lives, 2-second invincibility on respawn, clear nearby obstacles
+- **RestartableScene protocol**: Added for cleaner restart handling across all games

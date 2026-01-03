@@ -71,7 +71,7 @@ We will create fully original game titles, art, sound, UI, levels, and branding.
 Game slots (titles are ours; not classic names):
 1) **Glyph Runner** — Maze Chase style ✓ PLAYABLE
 2) **Starline Siege** — Fixed Shooter style ✓ PLAYABLE
-3) **Rivet Climb** — Platform Climber style (stub, NEXT)
+3) **Rivet Climb** — Platform Climber style ✓ PLAYABLE
 
 Additional games:
 - **Test Range** — simple gameplay (collect/dodge) to validate the system ✓ PLAYABLE
@@ -154,11 +154,25 @@ Implemented **Starline Siege** (fixed shooter style).
 - Lives system with 2-second invincibility on respawn
 - Precision bullet collision detection
 
-### Phase 3 — Build Game 3 fully (NEXT)
-Implement **Rivet Climb** (platform climber style).
-- Platforming physics, ladders
-- Obstacles, hazards
-- Level progression
+### Phase 3 — Build Game 3 fully ✓ COMPLETE
+Implemented **Rivet Climb** (platform climber style).
+
+**Delivered:**
+- 6 files in `Games/RivetClimb/`
+- Pure grid movement (deterministic, no physics velocity)
+- Player with state machine (grounded, climbing, falling)
+- Tap zones for walking, swipes for climbing, hold-to-repeat
+- Input buffer for responsive controls
+- Rolling bolts and falling crates as obstacles (grid-driven)
+- Difficulty scaling: spawn rate, obstacle mix, drop-through %
+- Rivet collectibles with streak bonus
+- Danger bonus when obstacles pass nearby
+- 3 ASCII-defined level layouts with variations
+- Lives system with invincibility on respawn
+- RestartableScene protocol for cleaner restart handling
+
+### ALL CORE GAMES COMPLETE ✓
+All 3 planned retro-inspired games are now fully playable.
 
 ## 8) Definition of Done (Phase 0) ✓ ALL MET
 - ✓ Builds and runs on iPhone simulator
